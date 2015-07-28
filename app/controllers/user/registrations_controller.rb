@@ -1,6 +1,8 @@
 class User::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
+helper_method :verify_recaptcha
+skip_before_filter :require_no_authentication, :only => [:new]
 
   # GET /resource/sign_up
   # def new
@@ -8,9 +10,13 @@ class User::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+   def create
+     if verify_recaptcha
+     super
+   else
+     render :new
+     end
+   end
 
   # GET /resource/edit
   # def edit
