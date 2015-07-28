@@ -1,0 +1,24 @@
+[ 2015-07-28 12:56:18.0680 2271/7fc0ecb01780 age/Wat/Main.cpp:1274 ]: Starting Passenger watchdog...
+[ 2015-07-28 12:56:18.0722 2274/7f1234cd8780 age/Cor/Main.cpp:957 ]: Starting Passenger core...
+[ 2015-07-28 12:56:18.0723 2274/7f1234cd8780 age/Cor/Main.cpp:234 ]: Passenger core running in multi-application mode.
+[ 2015-07-28 12:56:18.0736 2274/7f1234cd8780 age/Cor/Main.cpp:707 ]: Passenger core online, PID 2274
+[ 2015-07-28 12:56:18.0784 2279/7fe7becff780 age/Ust/Main.cpp:430 ]: Starting Passenger UstRouter...
+[ 2015-07-28 12:56:18.0788 2279/7fe7becff780 age/Ust/Main.cpp:311 ]: Passenger UstRouter online, PID 2279
+2015/07/28 12:56:20 [error] 2289#0: *4 "/opt/passenger/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "0.0.0.0"
+2015/07/28 12:56:21 [error] 2289#0: *5 "/opt/passenger/public/index.html" is not found (2: No such file or directory), client: 92.24.20.221, server: _, request: "GET / HTTP/1.1", host: "schoolsurvivaltools.com"
+2015/07/28 12:56:22 [error] 2289#0: *6 "/opt/passenger/public/index.html" is not found (2: No such file or directory), client: 92.24.20.221, server: _, request: "GET / HTTP/1.1", host: "schoolsurvivaltools.com"
+2015/07/28 12:56:22 [error] 2289#0: *6 open() "/opt/passenger/public/favicon.ico" failed (2: No such file or directory), client: 92.24.20.221, server: _, request: "GET /favicon.ico HTTP/1.1", host: "schoolsurvivaltools.com", referrer: "http://schoolsurvivaltools.com/"
+
+[ 2015-07-28 12:56:25.9920 2274/7f1232c7f700 age/Cor/Main.cpp:507 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2015-07-28 12:56:25.9921 2274/7f1234cd8780 age/Cor/Main.cpp:876 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2015-07-28 12:56:25.9921 2274/7f123247e700 Ser/Server.h:752 ]: [ApiServer] Freed 0 spare client objects
+[ 2015-07-28 12:56:25.9922 2274/7f123247e700 Ser/Server.h:443 ]: [ApiServer] Shutdown finished
+[ 2015-07-28 12:56:25.9923 2274/7f1232c7f700 Ser/Server.h:752 ]: [ServerThr.1] Freed 128 spare client objects
+[ 2015-07-28 12:56:25.9923 2274/7f1232c7f700 Ser/Server.h:443 ]: [ServerThr.1] Shutdown finished
+[ 2015-07-28 12:56:25.9935 2274/7f1234cd8780 age/Cor/Main.cpp:942 ]: Passenger core shutdown finished
+
+[ 2015-07-28 12:56:25.9941 2279/7fe7bce85700 age/Ust/Main.cpp:337 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2015-07-28 12:56:25.9942 2279/7fe7becff780 age/Ust/Main.cpp:399 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2015-07-28 12:56:25.9942 2279/7fe7bce85700 Ser/Server.h:752 ]: [LoggerApiServer] Freed 0 spare client objects
+[ 2015-07-28 12:56:25.9942 2279/7fe7bce85700 Ser/Server.h:443 ]: [LoggerApiServer] Shutdown finished
+[ 2015-07-28 12:56:25.9945 2279/7fe7becff780 age/Ust/Main.cpp:424 ]: Passenger UstRouter shutdown finished

@@ -1,0 +1,29 @@
+
+<div class="formWrapper">
+    <%=form_for Message.new, :html => {:class=>"mForm"} do |t|%>
+    <div class ="Inputs">
+        <div class="row">
+        
+        <div class="input-field col s6">
+        <%=t.text_field :subject, :class => "validate", :length => '25', :placeholder => 'Subject'%><br>
+        <%=t.text_area :content, :class => "materialize-textarea", :placeholder => "Message"%>
+        <%=recaptcha_tags%>
+        </div>
+        </div>
+        
+        <div class="submit">
+            <%=t.submit "Submit", :class => "btn"%>
+            
+        </div>
+        
+        <%end%>
+    </div>
+</div>
+
+<div id="error">
+     <%if verify_recaptcha == false%>
+     <script type="text/javascript">
+         Materialize.toast('Please Check the Recaptcha Box,\n or if you happen to be a robot, Fuck off!', 5000);
+     </script>
+     <%end%>
+</div>

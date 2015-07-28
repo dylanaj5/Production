@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Message App (<%=Message.count(:conditions => "post_time = Time.now.utc.to_date")%>)</title>
+  <link type='text/css' rel='stylesheet'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'materialize', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <nav>
+    <div class="nav-wrapper">
+      <a href=<%=home_path%> class="brand-logo"><i class="power_settings_new"></i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="<%=edit_path%>">Create Message</a></li>
+        <li><% if user_signed_in? %><div><%= current_user.email %></div> <%else%> <%=link_to "Login", new_user_session_path%> <%end%> </li>
+        <li><% if user_signed_in?%><%= link_to('Logout', destroy_user_session_path, :method => :delete) %><% end %></li>
+      </ul>
+    </div>
+  </nav>
+<%= yield %>
+
+</body>
+</html>
