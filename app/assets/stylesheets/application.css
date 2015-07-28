@@ -21,11 +21,9 @@
     margin:auto;
 }
 
-.g-recaptcha{
-    margin:auto;
-    width:33%;
-    padding-left:482px;
-}
 body {
     background-image: url("http://i.imgur.com/iteLYdN.jpg");
+}
+#menu:hover{
+    background-color:#ab47bc;
 }
