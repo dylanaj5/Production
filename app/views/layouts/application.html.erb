@@ -12,11 +12,11 @@
 <body>
     <nav>
     <div class="nav-wrapper">
-      <a href=<%=home_path%> class="brand-logo"><i class="power_settings_new"></i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="<%=edit_path%>">Create Message</a></li>
-        <li><% if user_signed_in? %><div><%= current_user.email %></div> <%else%> <%=link_to "Login", new_user_session_path%> <%end%> </li>
-        <li><% if user_signed_in?%><%= link_to('Logout', destroy_user_session_path, :method => :delete) %><% end %></li>
+      <a href='<%=home_path%>' class="brand-logo"><i class="power_settings_new"></i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down blue-grey">
+        <li id="menu"><a href="<%=edit_path%>">Create Message</a></li>
+        <li id="menu"><% if user_signed_in? %><div><%= current_user.email %></div> <%else%> <%=link_to "Login", new_user_session_path%> <%end%> </li>
+        <li id="menu"><% if user_signed_in?%><%= link_to('Logout', destroy_user_session_path, :method => :delete) %><% end %></li>
       </ul>
     </div>
   </nav>
