@@ -3,23 +3,35 @@
 <head>
   <title>Message App (<%=Message.count(:conditions => "post_time = Time.now.utc.to_date")%>)</title>
   <link type='text/css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'materialize', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src='https://www.google.com/recaptcha/api.js'></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
     <nav>
     <div class="nav-wrapper">
-      <a href='<%=home_path%>' class="brand-logo"><i class="power_settings_new"></i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down blue-grey">
+      <a href="<%=home_path%>" class="brand-logo center"><i class="material-icons">home</i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         <li id="menu"><a href="<%=edit_path%>">Create Message</a></li>
-        <li id="menu"><% if user_signed_in? %><div><%= current_user.email %></div> <%else%> <%=link_to "Login", new_user_session_path%> <%end%> </li>
+        <li id="menu"><% if user_signed_in? %><div><%=current_user.email%></div> <%else%> <%=link_to "Login", new_user_session_path%> <%end%></li>
         <li id="menu"><% if user_signed_in?%><%= link_to('Logout', destroy_user_session_path, :method => :delete) %><% end %></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="<%=edit_path%>">Create Message</a></li>
+        <li><% if user_signed_in? %><div><%= current_user.email %></div> <%else%> <%=link_to "Login", new_user_session_path%> <%end%></li>
+        <li><% if user_signed_in?%><%= link_to('Logout', destroy_user_session_path, :method => :delete) %><% end %></li>
       </ul>
     </div>
   </nav>
+ <script>$(".button-collapse").sideNav();</script>
+ <script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=49345_74875_3&type=footer&size=728x90'></script>
+</script>
 <%= yield %>
 
 </body>
